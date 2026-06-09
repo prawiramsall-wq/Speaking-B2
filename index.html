@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Beginner Speaking Exercise 2</title>
+
+<style>
+
+body{
+font-family:Arial,sans-serif;
+background:#f4f7fb;
+padding:20px;
+}
+
+.container{
+max-width:900px;
+margin:auto;
+}
+
+.card{
+background:white;
+padding:25px;
+border-radius:15px;
+box-shadow:0 3px 10px rgba(0,0,0,.08);
+}
+
+h1{
+text-align:center;
+color:#0a66c2;
+}
+
+.exercise{
+display:none;
+}
+
+.exercise.active{
+display:block;
+}
+
+img{
+width:100%;
+max-height:400px;
+object-fit:cover;
+border-radius:10px;
+margin:15px 0;
+}
+
+.guide{
+background:#eef5ff;
+padding:15px;
+border-radius:10px;
+margin-top:15px;
+line-height:1.8;
+}
+
+.nav-buttons{
+display:flex;
+justify-content:space-between;
+margin-top:20px;
+}
+
+button{
+padding:12px 25px;
+border:none;
+border-radius:8px;
+background:#0a66c2;
+color:white;
+cursor:pointer;
+}
+
+button:hover{
+background:#084d93;
+}
+
+.finish{
+display:none;
+text-align:center;
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="card">
+
+<h1>Beginner Speaking Exercise 2</h1>
+
+<h3>🖼️ Picture Description</h3>
+
+<p>
+Look at the picture and speak for 30–60 seconds.
+Use the guiding questions to help you.
+</p>
+
+<!-- SOAL 1 -->
+<div class="exercise active" id="q1">
+
+<h3>Exercise 1 of 8</h3>
+
+<img src="images/pic1.jpg">
+
+<div class="guide">
+• What can you see?<br>
+• Who is in the picture?<br>
+• What are they doing?
+</div>
+
+<div class="nav-buttons">
+<div></div>
+<button onclick="next(1)">Next →</button>
+</div>
+
+</div>
+
+<!-- SOAL 2 -->
+<div class="exercise" id="q2">
+
+<h3>Exercise 2 of 8</h3>
+
+<img src="images/pic2.jpg">
+
+<div class="guide">
+• Where is this place?<br>
+• What activities can people do here?<br>
+• Would you like to visit it?
+</div>
+
+<div class="nav-buttons">
+<button onclick="previous(2)">← Previous</button>
+<button onclick="next(2)">Next →</button>
+</div>
+
+</div>
+
+<!-- SOAL 3 -->
+<div class="exercise" id="q3">
+
+<h3>Exercise 3 of 8</h3>
+
+<img src="images/pic3.jpg">
+
+<div class="guide">
+• What objects can you see?<br>
+• What is happening?<br>
+• Describe the scene.
+</div>
+
+<div class="nav-buttons">
+<button onclick="previous(3)">← Previous</button>
+<button onclick="next(3)">Next →</button>
+</div>
+
+</div>
+
+<!-- SOAL 4 -->
+<div class="exercise" id="q4">
+
+<h3>Exercise 4 of 8</h3>
+
+<img src="images/pic4.jpg">
+
+<div class="guide">
+• How many people are there?<br>
+• What are they doing?<br>
+• How do they feel?
+</div>
+
+<div class="nav-buttons">
+<button onclick="previous(4)">← Previous</button>
+<button onclick="next(4)">Next →</button>
+</div>
+
+</div>
+
+<!-- SOAL 5 -->
+<div class="exercise" id="q5">
+
+<h3>Exercise 5 of 8</h3>
+
+<img src="images/pic5.jpg">
+
+<div class="guide">
+• What place is shown?<br>
+• What do you like about it?<br>
+• Have you ever visited a similar place?
+</div>
+
+<div class="nav-buttons">
+<button onclick="previous(5)">← Previous</button>
+<button onclick="next(5)">Next →</button>
+</div>
+
+</div>
+
+<!-- SOAL 6 -->
+<div class="exercise" id="q6">
+
+<h3>Exercise 6 of 8</h3>
+
+<img src="images/pic6.jpg">
+
+<div class="guide">
+• What is the weather like?<br>
+• What are people doing?<br>
+• What would you do there?
+</div>
+
+<div class="nav-buttons">
+<button onclick="previous(6)">← Previous</button>
+<button onclick="next(6)">Next →</button>
+</div>
+
+</div>
+
+<!-- SOAL 7 -->
+<div class="exercise" id="q7">
+
+<h3>Exercise 7 of 8</h3>
+
+<img src="images/pic7.jpg">
+
+<div class="guide">
+• Describe the people.<br>
+• What activities are happening?<br>
+• What do you think about this picture?
+</div>
+
+<div class="nav-buttons">
+<button onclick="previous(7)">← Previous</button>
+<button onclick="next(7)">Next →</button>
+</div>
+
+</div>
+
+<!-- SOAL 8 -->
+<div class="exercise" id="q8">
+
+<h3>Exercise 8 of 8</h3>
+
+<img src="images/pic8.jpg">
+
+<div class="guide">
+• What is the main thing in the picture?<br>
+• Describe it.<br>
+• Why is it interesting?
+</div>
+
+<div class="nav-buttons">
+<button onclick="previous(8)">← Previous</button>
+<button onclick="finishExercise()">Finish</button>
+</div>
+
+</div>
+
+<!-- FINISH -->
+<div class="finish" id="finish">
+
+<h2>🎉 Excellent!</h2>
+
+<p>
+You have completed all Picture Description activities.
+</p>
+
+<p>
+Keep practicing speaking confidently and clearly.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<script>
+
+function next(number){
+
+document.getElementById("q"+number)
+.classList.remove("active");
+
+document.getElementById("q"+(number+1))
+.classList.add("active");
+
+}
+
+function previous(number){
+
+document.getElementById("q"+number)
+.classList.remove("active");
+
+document.getElementById("q"+(number-1))
+.classList.add("active");
+
+}
+
+function finishExercise(){
+
+document.getElementById("q8")
+.classList.remove("active");
+
+document.getElementById("finish")
+.style.display="block";
+
+}
+
+</script>
+
+</body>
+</html>
